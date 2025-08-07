@@ -7,7 +7,6 @@
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <artifactId>spring-web</artifactId>
-    <name>spring-web</name>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -44,7 +43,6 @@
         </dependency>
     </dependencies>
     <build>
-        <finalName>spring-web</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
