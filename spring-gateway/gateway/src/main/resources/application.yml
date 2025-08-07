@@ -1,0 +1,12 @@
+server:
+  port: 18080
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: gateway,health,info  # 暴露 gateway 端点
+  endpoint:
+    gateway:
+      enabled: true                   # 显式启用 Gateway 端点

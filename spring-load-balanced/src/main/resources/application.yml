@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: user
+  cloud:
+    loadbalancer:
+      configurations: random  # 使用随机策略
+      retry:
+        # false: org.springframework.cloud.client.loadbalancer.reactive.ReactorLoadBalancerExchangeFilterFunction
+        #       org.springframework.cloud.client.loadbalancer.LoadBalancerInterceptor
+        #       org.springframework.cloud.openfeign.loadbalancer.FeignBlockingLoadBalancerClient
+        # true: org.springframework.cloud.client.loadbalancer.reactive.RetryableLoadBalancerExchangeFilterFunction
+        #       org.springframework.cloud.client.loadbalancer.RetryLoadBalancerInterceptor
+        #       org.springframework.cloud.openfeign.loadbalancer.RetryableFeignBlockingLoadBalancerClient
+        enabled: true
+        max-retries-on-same-service-instance: 2  # 同一实例重试次数
+        max-retries-on-next-service-instance: 1  # 切换实例重试次数
+        retryable-status-codes: 500,502,503  # 对哪些状态码重试
+
+server.port: 8888

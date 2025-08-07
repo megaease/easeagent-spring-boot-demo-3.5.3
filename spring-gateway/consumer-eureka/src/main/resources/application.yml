@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: consumer-eureka-service
+server:
+  port: 18083
+
+eureka:
+  client:
+    enabled: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    preferIpAddress: true
+    lease-expiration-duration-in-seconds: 60
+    metadata-map:
+      system: GVC
